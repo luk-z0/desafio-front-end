@@ -14,8 +14,19 @@ import { createStore } from 'vuex'
 
 export default store(function (/* { ssrContext } */) {
   const Store = createStore({
+
+    state: {
+
+    },
+    mutations: {
+
+    },
+    actions: {
+
+    },
+
     modules: {
-     
+
     },
 
     // enable strict mode (adds overhead!)

@@ -1,45 +1,33 @@
 <template>
-  <H2>Página principal</H2>
+  <div class="header-div">
+    <h2 class="welcome">Página principal</h2>
+    <p class="text">Aplicação realizada para o desafio Front End</p>
+  </div>
 </template>
 
 <script>
 import { api } from 'src/boot/axios'
 import { defineComponent, onMounted } from 'vue'
 
-
-
-
 export default {
   name: 'IndexPage',
 
-
-  data() {
-    return {
-      // people: []
-    }
-
-  },
-
-  mounted() {
-    // this.getPeople()
-  },
-
-
-  methods: {
-
-    // getPeople() {
-    //   api.get("/people/")
-    //     .then((response) => {
-    //       this.people = response.data
-    //       console.log(response.data);
-    //     }).catch((err) => {
-    //       console.log(err);
-    //     })
-    // },
-
-
-
-  }
-
 }
 </script>
+
+<style>
+.header-div {
+  margin: auto;
+  width: 50%;
+  padding: 50px;
+}
+
+.welcome {
+  text-align: center;
+}
+
+.text {
+  text-align: center;
+  font-size: larger;
+}
+</style>

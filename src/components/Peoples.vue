@@ -1,35 +1,40 @@
 <template>
-  <CardComponent />
+  <div>
+      <CardComponent :peoples="peoples"> </CardComponent>
+  </div>
 </template>
 
 <script>
 import { api } from 'src/boot/axios';
+import { onMounted, ref } from 'vue';
 import CardComponent from './CardComponent.vue';
-
 
 export default {
   name: "Peoples",
+
   components: {
     CardComponent
   },
 
-  mounted() {
-    this.getPeople();
-  },
-  methods: {
-    getPeople() {
+  setup() {
+    let peoples = ref([]);
+
+    function getPeople() {
       api.get("/people/")
         .then((response) => {
-          this.peoples = response.data;
-          console.log(response.data);
+          peoples.value = response.data.results;
+          console.log(response.data.results);
         }).catch((err) => {
           console.log(err);
         });
     }
-  },
+    onMounted(getPeople)
+
+    return {
+      peoples
+    }
+  }
 }
+
+
 </script>
-
-<style>
-
-</style>
