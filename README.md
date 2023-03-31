@@ -4,7 +4,7 @@ Este desafio proposto para a vaga de estágio pela Ti Saúde.
 
 ## Install the dependencies
 ```bash
-yarn
+yarnn
 # or
 npm install
 ```
